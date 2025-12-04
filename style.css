@@ -12,5 +12,15 @@ body {
     width: 1200px;
     height: 1200px;
     border: 1px solid black;
-    margin: 0 auto;
+    margin: auto;
+}
+
+.btn {
+    border: 1px solid grey;
+    height: 40px;
+    width: 120px;
+    margin: 20px auto;
+    line-height: 40px;
+    border-radius: 10px;
+    background: lightgray;
 }
