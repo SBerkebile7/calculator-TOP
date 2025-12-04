@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+    font-size: 16px;
+    width: 100%;
+    margin: 0px;
+}
+
+.calcContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 1200px;
+    height: 1200px;
+    border: 1px solid black;
+    margin: 0 auto;
+}

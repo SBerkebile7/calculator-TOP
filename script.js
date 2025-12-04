@@ -1,3 +1,7 @@
+const calcContainer = document.querySelector(".calcContainer");
+const size = parseInt(window.getComputedStyle(calcContainer).width, 10);
+
+
 const add = function(x, y) {
 	 return x + y;
 };
