@@ -1,19 +1,17 @@
 const calcContainer = document.querySelector(".calcContainer");
-const size = parseInt(window.getComputedStyle(calcContainer).width, 10);
 
-
-const add = function(x, y) {
-	 return x + y;
+const add = function(array) {
+	 return array.reduce((x, y) => x + y);
 };
 
-const subtract = function(x, y) {
-	return x - y;
+const subtract = function(array) {
+	return array.reduce((x, y) => x - y);
 };
 
-const multiply = function(x, y) {
-  return x * y;
+const multiply = function(array) {
+  return array.reduce((x, y) => x * y);
 };
 
-const divide = function(x, y) {
-  return x / y;
+const divide = function(array) {
+  return array.reduce((x, y) => x / y);
 };
