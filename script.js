@@ -5,6 +5,7 @@ const output = document.querySelector('.output');
 let firstNum = '';
 let operator = '';
 let currentInput = '0';
+let shouldClear = false;
 
 const updateDisplay = () => {
     output.innerText = currentInput;
@@ -50,7 +51,10 @@ calcBtns.forEach((btn) => {
     btn.onclick = () => {
         // Handle number input
         if (btnValue >= '0' && btnValue <= '9') {
-            if (currentInput === '0') {
+            if (shouldClear) {
+                currentInput = btnValue;
+                shouldClear = false;
+            } else if (currentInput === '0') {
                 currentInput = btnValue;
             } else {
                 currentInput += btnValue;
@@ -62,13 +66,13 @@ calcBtns.forEach((btn) => {
             if (firstNum === '' && currentInput !== '') {
                 firstNum = currentInput;
                 operator = btnValue;
-                currentInput = '0';
+                shouldClear = true;
             } else if (firstNum !== '' && currentInput !== '0') {
                 // Chain operations
                 const result = operate(firstNum, operator, currentInput);
                 firstNum = result;
                 operator = btnValue;
-                currentInput = '0';
+                shouldClear = true;
                 updateDisplay();
             }
         }
@@ -79,6 +83,7 @@ calcBtns.forEach((btn) => {
                 currentInput = result.toString();
                 firstNum = '';
                 operator = '';
+                shouldClear = true;
                 updateDisplay();
             }
         }
@@ -87,6 +92,7 @@ calcBtns.forEach((btn) => {
             firstNum = '';
             operator = '';
             currentInput = '0';
+            shouldClear = false;
             updateDisplay();
         }
     };
