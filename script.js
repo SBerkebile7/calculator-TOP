@@ -68,8 +68,9 @@ calcBtns.forEach((btn) => {
                 operator = btnValue;
                 shouldClear = true;
             } else if (firstNum !== '' && currentInput !== '0') {
-                // Chain operations
+                // Chain operations - calculate and show result
                 const result = operate(firstNum, operator, currentInput);
+                currentInput = result.toString();
                 firstNum = result;
                 operator = btnValue;
                 shouldClear = true;
